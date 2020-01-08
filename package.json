@@ -1,0 +1,19 @@
+{
+  "name": "bitcoin-ticker",
+  "version": "1.0.0",
+  "description": "Nifty bitcoin ticker app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidthemavid/bitcoin-ticker.git"
+  },
+  "author": "David",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidthemavid/bitcoin-ticker/issues"
+  },
+  "homepage": "https://github.com/davidthemavid/bitcoin-ticker#readme"
+}
