@@ -11,17 +11,28 @@ app.get("/", function(req, res) {
 });
 
 app.post("/", function(req, res) {
-  request(
-    "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD",
-    function(error, response, body) {
-      let data = JSON.parse(body);
-      let price = data.averages.week;
-      res.send("Current average price: " + price + " USD");
+  let crypto = req.body.crypto;
+  let fiat = req.body.fiat;
+  console.log(crypto);
+  let URL = "https://apiv2.bitcoinaverage.com/indices/global/ticker/";
+  let finalURL = URL + crypto + fiat;
 
-      console.log(price);
-      console.log("Status code: " + response.statusCode);
-    }
-  );
+  request(finalURL, function(error, response, body) {
+    let data = JSON.parse(body);
+    let price = data.averages.week;
+    let high = data.high;
+    let low = data.low;
+    let todaysDate = data.display_timestamp;
+    console.log(data.last);
+    res.write("<p>Today's date is: " + todaysDate + "</p>");
+    res.write(
+      "<h1>Current price of: " + crypto + " is " + price + " " + fiat + "</h1>"
+    );
+    res.write("<h2>High: " + high + " Low: " + low + "</h2>");
+
+    console.log(price);
+    console.log("Status code: " + response.statusCode);
+  });
 });
 
 app.listen(3000, function() {
