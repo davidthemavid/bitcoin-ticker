@@ -2,16 +2,16 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Bitcoin Ticker</title>
+        <title>Bitcoin Converter</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="./main.css">
     </head>
     <body>
-        <h1>Bitcoin Ticker</h1>
+        <h1 id="title">Bitcoin Converter</h1>
 
         <form action="/" method="post">
-            <input type="text" name="amount" value="" placeholder="Enter an amount">
+            <input type="number" name="amount" value="" placeholder="Enter an amount">
         <select name="crypto">
 <option value="BTC">Bitcoin</option>
 <option value="ETH">Ethereum</option>
@@ -26,8 +26,7 @@
         
                     <button type="submit" name="button">Check</button>
         </form>
-  
         
-        <script src="" async defer></script>
+        <script src="./index.js"></script>
     </body>
 </html>
