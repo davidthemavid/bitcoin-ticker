@@ -41,10 +41,12 @@ app.post("/", function(req, res) {
     let data = JSON.parse(body);
     let price = data.price;
     let todaysDate = data.time;
-    res.write("<p>Today's date is: " + todaysDate + "</p>");
+    res.write(
+      "<p style=font-family:'Arial'>Today's date is: " + todaysDate + "</p>"
+    );
     console.log("Status code: " + response.statusCode);
     res.write(
-      "<h1>" +
+      "<h1 style=font-family:'Arial'>" +
         amount +
         " " +
         crypto +
@@ -59,7 +61,13 @@ app.post("/", function(req, res) {
       let data2 = JSON.parse(body);
       let high = data2.high;
       let low = data2.low;
-      res.write("<h2>High: " + high + " Low: " + low + "</h2>");
+      res.write(
+        "<h2 style=font-family:'Arial'> High: " +
+          high +
+          " Low: " +
+          low +
+          "</h2>"
+      );
       res.send();
     });
   });
