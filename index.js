@@ -4,6 +4,8 @@ const request = require("request");
 
 const app = express();
 
+app.use(express.static("public"));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // TODO: Figure out how to apply css file to index.html
